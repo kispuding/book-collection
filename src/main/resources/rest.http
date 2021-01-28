@@ -1,0 +1,148 @@
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "The Subtle Art of Not Giving a F*ck",
+  "description": "A generation-defining self-help guide."
+}
+
+###
+
+POST http://localhost:8081/api/authors
+Content-Type: application/json
+
+{
+  "firstName": "Mark",
+  "lastName": "Manson"
+}
+
+###
+
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "Everything is F*cked",
+  "description": "Guide to the problems of hope from the author of the international mega-bestseller The Subtle Art of Not Giving A F*ck.",
+  "authors": [
+    {
+      "id": 1
+    }
+  ]
+}
+
+###
+
+PUT http://localhost:8081/api/books/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "The Subtle Art of Not Giving a F*ck",
+  "description": "A generation-defining self-help guide.",
+  "authors": [
+    {
+      "id": 1
+    }
+  ]
+}
+
+###
+
+POST http://localhost:8081/api/authors
+Content-Type: application/json
+
+{
+  "firstName": "Erik",
+  "lastName": "Schmid"
+}
+
+###
+
+POST http://localhost:8081/api/authors
+Content-Type: application/json
+
+{
+  "firstName": "Jonathan",
+  "lastName": "Rosenberg"
+}
+
+###
+
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "How Google Works",
+  "description": "The sum of experiences of two business executives in Google distilled into fun.",
+  "authors": [
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ]
+}
+
+###
+
+PUT http://localhost:8081/api/authors/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Erik",
+  "lastName": "Schmidt"
+}
+
+
+###
+
+POST http://localhost:8081/api/authors
+Content-Type: application/json
+
+{
+  "firstName": "Ken",
+  "lastName": "Mogi"
+}
+
+###
+
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "The Little Book of Ikigai",
+  "description": "Ikigai is a Japanese phenomenon commonly understood as \"your reason to get up in the morning\"",
+  "authors": [
+    {
+      "id": 4
+    }
+  ]
+}
+
+###
+
+DELETE http://localhost:8081/api/books/4
+
+###
+
+DELETE http://localhost:8081/api/authors/4
+
+###
+
+GET http://localhost:8081/api/books
+
+###
+
+GET http://localhost:8081/api/authors
+
+###
+
+GET http://localhost:8081/api/authors/1/books
+
+###
+
+GET http://localhost:8081/api/books/3
+
