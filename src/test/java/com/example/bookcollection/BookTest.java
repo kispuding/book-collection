@@ -1,14 +1,15 @@
-package com.example.bookcollection.service;
+package com.example.bookcollection;
 
 import com.example.bookcollection.exception.BookNotFoundException;
-import com.example.bookcollection.model.Author;
 import com.example.bookcollection.model.Book;
 import com.example.bookcollection.repository.AuthorRepository;
 import com.example.bookcollection.repository.BookRepository;
+import com.example.bookcollection.service.BookService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,9 +21,10 @@ import java.util.Optional;
 import static org.junit.Assert.*;
 
 @ContextConfiguration(classes =
-        BookServiceTest.BookServiceTestConfig.class)
+        BookTest.BookTestConfig.class)
 @RunWith(SpringRunner.class)
-public class BookServiceTest {
+@SpringBootTest
+public class BookTest {
 
     @MockBean
     private BookRepository bookRepository;
@@ -35,7 +37,7 @@ public class BookServiceTest {
 
     @Configuration
     @ComponentScan(basePackageClasses = {BookService.class})
-    public static class BookServiceTestConfig {}
+    public static class BookTestConfig {}
 
     @Test
     public void testCreate() {
